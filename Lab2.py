@@ -1,5 +1,7 @@
-print ("ET0735 (DevOps for AIot) - Lab 2 -  Introduction to Python" \
-"")
+def main():
+print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
+
+
 
 def cbmi ( height, weight):
     print ("Height = "+str(height))
@@ -12,11 +14,8 @@ def cbmi ( height, weight):
         print ("overweight")
     else:
         print ("normal range")
-        
-
-
     return bmi
-
+def main():
 
 
 
