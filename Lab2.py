@@ -1,81 +1,82 @@
 
 def display_main_menu():
-    print("enter some numbers seperated by commas")
+    print("Enter some numbers separated by commas")
+
 
 def get_user_input():
     uinumbers = input()
     uisplitnumbers = uinumbers.split(",")
     uilist = [float(num) for num in uisplitnumbers]
-    print (uilist)
-    return (uilist)
+    print(uilist)
+    return uilist
+
 
 def calc_average(uilist):
     total_count = len(uilist)
     total = sum(uilist)
     average = total / total_count
-    print (average)
-    return (total_count)
-    
+    print(average)
+    return total_count
+
 
 def find_min_max(uilist):
     minui = min(uilist)
     maxui = max(uilist)
-    print (minui)
-    print (maxui)   
-    return (minui,maxui)
+    print(minui)
+    print(maxui)
+    return minui, maxui
+
 
 def sort_temperature(uilist):
-    sort_temp = uilist.sort
-    print (sort_temp)
-    return (sort_temp)
+    sorted_list = sorted(uilist)
+    print(sorted_list)
+    return sorted_list
 
-def calc_median_temperature(uilist,total_count):
+
+def calc_median_temperature(uilist, total_count):
     sortuilist = sorted(uilist)
-    medianpos = total_count % 2
-    if medianpos == 1 :
-        odd = total_count // 2 
-        oddpos = int(medianpos)
-        print (uilist[oddpos])
-        return (uilist[oddpos])
-    else: 
-        odd = total_count // 2
-        oddpos = int(medianpos)
-        evenpos = oddpos - 1
-        middle = (uilist[oddpos] + uilist[evenpos]) / 2
-        print (middle)
-        return(middle)
+    mid = total_count // 2
 
-
-
-
-def cbmi ( height, weight):
-    print ("Height = "+str(height))
-    print ("Weight = "+str(weight))
-    bmi = weight / (height * height)
-    print (str(bmi))
-    if(bmi < 18.0):
-        print ("-1")
-        return (-1)
-    elif (bmi > 25.0):
-        print ("1")
-        return(1)
+    if total_count % 2 == 1:
+        median = sortuilist[mid]
     else:
-        print ("0")
-        return (0)
-  
+        median = (sortuilist[mid - 1] + sortuilist[mid]) / 2
+
+    print(median)
+    return median
+
+
+def cbmi(height, weight):
+    print("Height =", height)
+    print("Weight =", weight)
+
+    bmi = weight / (height ** 2)
+    print(bmi)
+
+    if bmi < 18.5:
+        return -1
+    elif bmi < 25:
+        return 0
+    else:
+        return 1
+
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
-display_main_menu()
-uilist = get_user_input()
-total_count = calc_average (uilist)
-find_min_max(uilist)
-sort_temperature(uilist)
-calc_median_temperature(uilist,total_count)
+
+
 
 if __name__ == "__main__":
     main()
 
+    display_main_menu()
+    uilist = get_user_input()
 
-cbmi(height = 1.6 , weight = 75)
+    total_count = calc_average(uilist)
 
+    find_min_max(uilist)
+    sort_temperature(uilist)
+    calc_median_temperature(uilist, total_count)
+    cbmi(height = 1.7 , weight = 80)
+
+   
