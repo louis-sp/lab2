@@ -54,18 +54,15 @@ def cbmi ( height, weight):
     bmi = weight / (height * height)
     print (str(bmi))
     if(bmi < 18.0):
-        print ("underweight")
+        print ("-1")
         return (-1)
     elif (bmi > 25.0):
-        print ("overweight")
+        print ("1")
         return(1)
     else:
-        print ("normal range")
+        print ("0")
         return (0)
-    return bmi
-
-
-    cbmi (height = 1.6,weight = 57)
+  
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
@@ -79,4 +76,6 @@ calc_median_temperature(uilist,total_count)
 if __name__ == "__main__":
     main()
 
+
+cbmi(height = 1.6 , weight = 75)
 
