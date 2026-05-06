@@ -55,10 +55,10 @@ def cbmi(height, weight):
 
     if bmi < 18.5:
         return -1
-    elif bmi < 25:
-        return 0
-    else:
+    elif bmi > 25:
         return 1
+    else:
+        return 0
 
 
 def main():
