@@ -55,10 +55,13 @@ def cbmi ( height, weight):
     print (str(bmi))
     if(bmi < 18.0):
         print ("underweight")
+        return (-1)
     elif (bmi > 25.0):
         print ("overweight")
+        return(1)
     else:
         print ("normal range")
+        return (0)
     return bmi
 
 
